@@ -1,0 +1,116 @@
+/* style.css */
+
+/* --- Анімаційний об'єкт "work" --- */
+#work {
+    position: fixed; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000; /* Поверх усього */
+    background-color: #e0f7fa; /* Світло-блакитний фон для "work" */
+    border: 3px solid #000;
+    
+    /* Розмір: W(45%)+10px х H(85%)+50px (2.a) */
+    width: calc(45vw + 10px);
+    height: calc(85vh + 50px);
+    
+    /* За замовчуванням прихований (2.d) */
+    display: none; 
+    box-sizing: border-box;
+}
+
+/* --- Область "anim" --- */
+#anim {
+    /* Розмір: W(45%) х H(85%) (2.b) */
+    width: 45vw;
+    height: 85vh;
+    border: 5px solid red; /* Червона рамка 5px */
+    box-sizing: border-box;
+    position: absolute; 
+    bottom: 0; /* Притиснута до нижнього краю "work" */
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden; /* Щоб квадрати не виходили за межі */
+
+    /* Встановлення фону (2.e) */
+    /* Верхня половина (Texture 1) та Нижня половина (Texture 2) */
+    background: 
+        /* Нижній фон (Texture 2) - займає всю площу */
+        url('texture2.png') repeat,
+        /* Верхній фон (Texture 1) - займає верхню половину */
+        url('texture1.png') repeat;
+    
+    /* Обмеження текстури 1 лише верхньою половиною */
+    background-size: 32px 32px, 32px 32px;
+    background-position: 0% 0%;
+    background-clip: padding-box, padding-box;
+    /* Використовуємо linear-gradient для візуального розділення,
+       інакше текстури просто накладаються одна на одну,
+       або потрібен більш складний CSS */
+    background-image: 
+        linear-gradient(to bottom, 
+                        transparent 0%, transparent 50%, /* Верхня половина - прозора */
+                        rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), /* Нижня половина - прозора */
+        url('texture2.png'), /* Нижній фон */
+        url('texture1.png'); /* Верхній фон */
+
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+    background-position: 0 0, 0 50%, 0 0; /* texture2 починається з 50% по Y, texture1 з 0 */
+}
+
+/* Простіший варіант для фону: */
+/*
+#anim {
+    ...
+    background: 
+        url('texture1.png') repeat 0 0 / 32px 32px,
+        url('texture2.png') repeat 0 50% / 32px 32px;
+}
+*/
+
+
+/* --- Область "controls" --- */
+#controls {
+    /* Решта "work" над "anim" (2.c) */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 85vh - 5px); /* Висота "work" мінус висота "anim" (85vh + 5px рамки) */
+    min-height: 40px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    box-sizing: border-box;
+    background-color: #b2ebf2;
+}
+
+#controls-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#message-display {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+    min-width: 250px;
+    text-align: right;
+}
+
+/* --- Квадрати --- */
+.square {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    will-change: transform; /* Оптимізація анімації */
+}
+#green-square {
+    background-color: green;
+}
+#orange-square {
+    background-color: orange;
+}

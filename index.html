@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <table width="100%" border="1">
+        <tr bgcolor="#d6e4f">
+            <td colspan="4" align="left">
+                <table width="100%">
+                    <tr></tr>
+                    <tr>
+                        <td></td>
+                        <td width="10%" bgcolor="white" align="center"><h2>My Library</h2></td>
+                        <td></td>
+                        <td align="right">
+                                <a href="detective.html">Детективи</a>&nbsp;
+                                <a href="novel.html">Романи</a>
+                                <a href="motivation.html">Саморозвиток</a>
+                                <a href="poem.html">Вірші</a>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                </table>
+            </td>     
+        </tr>
+
+        <tr>
+            <td border="1" bgcolor="#f6ede4" width="25%" rowspan="3">
+                <img src="books.jpg" alt="Зображення книг">
+            </td>
+            <td border="1" colspan="2" width="50%" align="center">
+                <p>Література — це не просто слова, надруковані на папері. Це живий світ, де переплітаються історія, краса та людські долі. Вона дає нам можливість подорожувати в часі, відчути емоції людей минулих епох і зазирнути в майбутнє.<br><br>Історія літератури — це по суті історія людства. Від давньогрецьких міфів до сучасних романів, кожна епоха залишала свій слід, відображаючи цінності, проблеми та надії свого часу. Краса літератури в тому, що автор вміє перетворити звичайні слова на мистецтво, будь то поетичний рядок, що викликає сльози, чи опис, що дозволяє відчути запах весняного дощу. Особливість літератури в її здатності змінювати нас. Вона змушує нас замислюватися, співпереживати і краще розуміти себе та світ навколо. Читаючи, ми не просто отримуємо інформацію, а переживаємо досвід, який робить нас мудрішими та чутливішими.</p>
+            </td>
+            <td border="1" bgcolor="#f6ede4" width="25%" rowspan="3" id="block-4">
+                <p>Привіт, рада вітати Вас на своєму сайті!<br> Мене звати Аня, і цей сайт — збірка моїх улюблених книжок різних жанрів. Читання — це моя найбільша пристрасть. Коли випадає вільна хвилинка від навчання, я пориню в цей дивовижний світ, який допомагає мені розслабитися і дарує можливість пережити безліч різних життів. Для мене це не просто хобі, а справжня подорож у світ краси, мистецтва та глибоких думок.<br><br>Я щиро сподіваюся, що ви також любите проводити час із книгою в руках. Я тут для того, щоб допомогти вам швидко знаходити найкращі твори, що залишають незабутні враження і надихають. Запрошую вас долучитися до цієї спільноти книголюбів і разом відкривати нові літературні світи!</p>
+                <div id="results-display"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2" id="block-5" align="center" bgcolor="#f1f9f2" border="1">
+                <button id="play-btn" style="padding: 10px; font-size: 1.1em;">▶️ РОЗПОЧАТИ АНІМАЦІЮ (Play)</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center" bgcolor="#f1f9f2" border="1">
+                <p>Обирай свій жанр і починай читати!</p>
+            </td>        
+        </tr>
+
+        <tr>
+            <td colspan="4" bgcolor="#d6e4f" border="1" align="right">
+                <table width="100%">
+                    <tr></tr>
+                    <tr align="left">
+                        <td></td>
+                        <td width="30%" bgcolor="white" align="center"><h3>Thank you for visiting my library >3</h3></td>
+                        <td></td>
+                        <td align="right">
+                           Мої контакти:<br>
+                            <a href="mailto:yagnyuk.anna-ip43@edu.kpi.ua">Send email</a> 
+                        </td>
+                    </tr>
+                    <tr></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <div id="work">
+        <div id="controls">
+            <button id="close-btn">Закрити (Close)</button>
+            
+            <div id="controls-right">
+                <button id="start-btn">Старт (Start)</button>
+                <button id="reload-btn" style="display: none;">Перезавантажити (Reload)</button>
+                <div id="message-display">Тут будуть повідомлення</div>
+            </div>
+        </div>
+
+        <div id="anim">
+            <div id="green-square" class="square"></div>
+            <div id="orange-square" class="square"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
